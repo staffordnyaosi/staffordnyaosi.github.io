@@ -1800,9 +1800,9 @@ const log = (...a) => CONFIG.debug && console.log('[SN Portfolio]', ...a);
 // ── 10. RESUME DOWNLOAD PLACEHOLDER ─────────────────────
 document.getElementById('resumeDownload')?.addEventListener('click', (e) => {
   e.preventDefault();
+ e.preventDefault();
   // Replace href with your actual resume PDF URL:
-  // window.open('stafford-nyaosi-resume.pdf', '_blank');
-  alert('Resume PDF: Replace this with your actual PDF link.\nFile: stafford-nyaosi-resume.pdf');
+  window.open('stafford-nyaosi-resume.pdf', '_blank');
   log('Resume download clicked');
 });
 
