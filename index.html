@@ -37,56 +37,57 @@
 
 <style>
 /* ════════════════════════════════════════════════════════
-   DESIGN TOKENS — Light & Dark
+   DESIGN TOKENS — Dark Navy + Gold Theme
    ════════════════════════════════════════════════════════ */
 :root {
-  /* Light mode */
-  --bg:          #fafafa;
-  --bg2:         #f4f6fa;
-  --bg3:         #edf1f7;
+  /* Light mode — deep navy ink + refined gold */
+  --bg:          #f8f7f4;
+  --bg2:         #f0ede6;
+  --bg3:         #e8e3d8;
   --surface:     #ffffff;
-  --border:      #e2e8f0;
-  --border-acc:  rgba(37,99,235,0.22);
-  --text:        #0f172a;
-  --text2:       #475569;
-  --text3:       #94a3b8;
-  --accent:      #2563eb;
-  --accent-h:    #1d4ed8;
-  --accent-bg:   rgba(37,99,235,0.07);
-  --accent-brd:  rgba(37,99,235,0.18);
+  --border:      #ddd8cc;
+  --border-acc:  rgba(160,118,10,0.28);
+  --text:        #0d1626;
+  --text2:       #3d4a5c;
+  --text3:       #8a8a7a;
+  --accent:      #9a7000;
+  --accent-h:    #7a5800;
+  --accent-bg:   rgba(154,112,0,0.08);
+  --accent-brd:  rgba(154,112,0,0.2);
   --green:       #16a34a;
   --green-bg:    rgba(22,163,74,0.09);
-  --amber:       #d97706;
-  --amber-bg:    rgba(217,119,6,0.09);
-  --nav-bg:      rgba(250,250,250,0.88);
+  --amber:       #9a7000;
+  --amber-bg:    rgba(154,112,0,0.09);
+  --nav-bg:      rgba(248,247,244,0.92);
   --shadow:      0 1px 3px rgba(0,0,0,0.07),0 8px 24px rgba(0,0,0,0.05);
-  --shadow-md:   0 4px 20px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.09),0 1px 3px rgba(0,0,0,0.06);
   --font-d:      'Inter', -apple-system, sans-serif;
   --font-m:      'JetBrains Mono', 'Fira Code', monospace;
   --r:           8px;
   --ease:        cubic-bezier(0.4,0,0.2,1);
 }
 [data-theme="dark"] {
-  --bg:          #060c18;
-  --bg2:         #0b1427;
-  --bg3:         #101d36;
-  --surface:     #0d1526;
-  --border:      #1a2a45;
-  --border-acc:  rgba(59,130,246,0.25);
-  --text:        #e2e8f0;
-  --text2:       #94a3b8;
-  --text3:       #475569;
-  --accent:      #3b82f6;
-  --accent-h:    #60a5fa;
-  --accent-bg:   rgba(59,130,246,0.09);
-  --accent-brd:  rgba(59,130,246,0.22);
+  /* Dark mode — deep navy + warm gold */
+  --bg:          #05090f;
+  --bg2:         #080e1c;
+  --bg3:         #0d1528;
+  --surface:     #0a1020;
+  --border:      #162035;
+  --border-acc:  rgba(212,168,50,0.28);
+  --text:        #eae6d8;
+  --text2:       #a09880;
+  --text3:       #505868;
+  --accent:      #d4a832;
+  --accent-h:    #e8c04a;
+  --accent-bg:   rgba(212,168,50,0.08);
+  --accent-brd:  rgba(212,168,50,0.22);
   --green:       #22c55e;
-  --green-bg:    rgba(34,197,94,0.09);
-  --amber:       #f59e0b;
-  --amber-bg:    rgba(245,158,11,0.09);
-  --nav-bg:      rgba(6,12,24,0.88);
-  --shadow:      0 1px 3px rgba(0,0,0,0.4),0 8px 24px rgba(0,0,0,0.3);
-  --shadow-md:   0 4px 20px rgba(0,0,0,0.4),0 1px 3px rgba(0,0,0,0.3);
+  --green-bg:    rgba(34,197,94,0.08);
+  --amber:       #d4a832;
+  --amber-bg:    rgba(212,168,50,0.08);
+  --nav-bg:      rgba(5,9,15,0.92);
+  --shadow:      0 1px 3px rgba(0,0,0,0.5),0 8px 24px rgba(0,0,0,0.4);
+  --shadow-md:   0 4px 24px rgba(212,168,50,0.07),0 1px 3px rgba(0,0,0,0.5);
 }
 
 /* ════════════════════════════════════════════════════════
@@ -121,7 +122,7 @@ ul{list-style:none}
 #progress-bar{
   position:fixed;top:0;left:0;z-index:200;
   height:2px;width:0%;
-  background:linear-gradient(90deg,var(--accent),#818cf8);
+  background:linear-gradient(90deg,var(--accent),#e8c04a);
   transition:width .1s linear;
 }
 
@@ -165,7 +166,7 @@ nav{
   background:var(--accent);padding:.38rem 1rem;border-radius:6px;
   transition:all .15s;white-space:nowrap;
 }
-.nav-hire:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,99,235,.4)}
+.nav-hire:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,50,.35)}
 .theme-toggle{
   width:34px;height:34px;border-radius:7px;
   background:var(--bg3);border:1px solid var(--border);
@@ -198,6 +199,34 @@ nav{
 .mob-nav a:hover{color:var(--accent);background:var(--accent-bg)}
 
 /* ════════════════════════════════════════════════════════
+   HERO PHOTO
+   ════════════════════════════════════════════════════════ */
+.hero-photo-wrap{
+  margin-bottom:1.8rem;
+  animation:fadeUp .6s .05s both;
+}
+.hero-photo{
+  width:100px;height:100px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center top;
+  border:2px solid var(--accent);
+  box-shadow:
+    0 0 0 5px var(--accent-bg),
+    0 8px 32px rgba(0,0,0,0.35),
+    0 0 20px rgba(212,168,50,0.15);
+  display:block;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.hero-photo:hover{
+  transform:scale(1.04);
+  box-shadow:
+    0 0 0 5px var(--accent-bg),
+    0 12px 40px rgba(0,0,0,0.4),
+    0 0 30px rgba(212,168,50,0.25);
+}
+
+/* ════════════════════════════════════════════════════════
    HERO
    ════════════════════════════════════════════════════════ */
 #home{
@@ -211,14 +240,22 @@ nav{
   background-image:radial-gradient(circle,var(--border) 1px,transparent 1px);
   background-size:28px 28px;
   mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 40%,transparent 80%);
-  opacity:.7;
+  opacity:.5;
 }
-/* Glow */
+/* Gold glow — top left hero atmosphere */
 #home::after{
   content:'';position:absolute;
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,var(--accent-bg) 0%,transparent 65%);
-  right:-100px;bottom:-100px;pointer-events:none;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,168,50,0.10) 0%,rgba(212,168,50,0.03) 40%,transparent 70%);
+  left:-200px;top:-100px;pointer-events:none;
+}
+/* Second glow — bottom right */
+.hero-glow2{
+  position:absolute;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,168,50,0.07) 0%,transparent 65%);
+  right:-100px;bottom:-50px;pointer-events:none;
+  z-index:0;
 }
 .hero-inner{
   position:relative;z-index:1;
@@ -295,7 +332,7 @@ h1.hero-name .accent{color:var(--accent)}
   border:1px solid transparent;
   transition:all .2s;
 }
-.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,99,235,.35)}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,168,50,.3)}
 .btn-secondary{
   display:inline-flex;align-items:center;gap:.45rem;
   background:var(--surface);color:var(--text);
@@ -583,7 +620,7 @@ h2.sec-title em{color:var(--accent);font-style:normal}
 .edu-card:hover{border-color:var(--border-acc);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .edu-card::after{
   content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--accent),#818cf8);
+  background:linear-gradient(90deg,var(--accent),#e8c04a);
   transform:scaleX(0);transform-origin:left;
   transition:transform .3s var(--ease);
 }
@@ -698,7 +735,7 @@ h2.sec-title em{color:var(--accent);font-style:normal}
 }
 .lang-bar-fill{
   height:100%;border-radius:2px;width:0;
-  background:linear-gradient(90deg,var(--accent),#818cf8);
+  background:linear-gradient(90deg,var(--accent),#e8c04a);
   transition:width 1s .3s var(--ease);
 }
 
@@ -788,7 +825,7 @@ h2.sec-title em{color:var(--accent);font-style:normal}
   padding:.7rem 1.5rem;border-radius:7px;border:none;cursor:pointer;
   transition:all .2s;align-self:flex-start;
 }
-.f-submit:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,99,235,.35)}
+.f-submit:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,168,50,.3)}
 .f-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
 .form-success{
   display:none;
@@ -821,6 +858,53 @@ footer p,.footer-link{
    ANIMATIONS
    ════════════════════════════════════════════════════════ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* Gold shimmer on hero accent name */
+h1.hero-name .accent{
+  background:linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #e8c04a 40%,
+    var(--accent) 60%,
+    #c49020 100%
+  );
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:goldShimmer 4s linear infinite;
+}
+@keyframes goldShimmer{
+  0%{background-position:0% center}
+  100%{background-position:200% center}
+}
+/* Only apply shimmer in dark mode where it reads well */
+[data-theme="light"] h1.hero-name .accent{
+  background:none;
+  -webkit-text-fill-color:var(--accent);
+  background-clip:initial;
+  animation:none;
+}
+
+/* Gold glow on metric chips hover in dark mode */
+[data-theme="dark"] .metric-chip:hover{
+  box-shadow:0 0 20px rgba(212,168,50,0.12);
+}
+
+/* Gold tint on exp card hover in dark mode */
+[data-theme="dark"] .exp-card:hover{
+  box-shadow:0 8px 32px rgba(212,168,50,0.08),0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Gold left edge on active nav link */
+.nav-links a.active{
+  border-left:2px solid var(--accent);
+  padding-left:calc(.7rem - 2px);
+}
+
+/* Refined scrollbar in gold */
+[data-theme="dark"]::-webkit-scrollbar-thumb{background:#162035}
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover{background:rgba(212,168,50,0.3)}
 
 /* ════════════════════════════════════════════════════════
    RESPONSIVE
@@ -897,7 +981,7 @@ Skills: Customer Success, Account Management, CRM, Remote Work, Python, HTML, CS
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
-    <a href="mailto:nyaosistaaford1@gmail.com" class="nav-hire">Hire Me →</a>
+    <a href="mailto:nyaosistafford1@gmail.com" class="nav-hire">Hire Me →</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -917,7 +1001,20 @@ Skills: Customer Success, Account Management, CRM, Remote Work, Python, HTML, CS
 
 <!-- ══ HERO ══ -->
 <section id="home" aria-label="Introduction">
+  <div class="hero-glow2" aria-hidden="true"></div>
   <div class="hero-inner">
+
+    <!-- Profile Photo -->
+    <div class="hero-photo-wrap">
+      <img
+        src="profile.jpg"
+        alt="Stafford Nyaosi — Inside Sales Specialist, Nairobi Kenya"
+        class="hero-photo"
+        width="100"
+        height="100"
+        loading="eager"
+      >
+    </div>
 
     <div class="hero-badge" role="status">
       <span class="hero-badge-dot" aria-hidden="true"></span>
@@ -978,7 +1075,7 @@ Skills: Customer Success, Account Management, CRM, Remote Work, Python, HTML, CS
     </div>
 
     <div class="hero-contact">
-      <a href="mailto:nyaosistaaford1@gmail.com" class="hero-contact-item" aria-label="Email Stafford">
+      <a href="mailto:nyaosistafford1@gmail.com" class="hero-contact-item" aria-label="Email Stafford">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         nyaosistafford1@gmail.com
       </a>
@@ -1005,7 +1102,7 @@ Skills: Customer Success, Account Management, CRM, Remote Work, Python, HTML, CS
     <div class="about-text reveal d2">
       <p>I'm Stafford Nyaosi — a remote Inside Sales Specialist, customer success professional, and technology student based in Nairobi, Kenya. I currently work as a contractor through <strong>Bloom</strong>, supporting <strong>M-GAS Kenya</strong> in managing a portfolio of approximately <strong>350 active customer accounts</strong> across a fully distributed environment.</p>
       <p>My approach to customer success is rooted in data, documentation, and genuine relationship-building. I monitor consumption patterns through smart metering dashboards, proactively engage at-risk accounts, and apply consultative selling techniques to drive measurable adoption growth. I've grown average customer LPG consumption <strong>from 2.5 kg to 4.0 kg — a 60% increase</strong> — by understanding each customer's usage behaviour and providing tailored guidance.</p>
-      <p>Before entering the remote workspace, I spent two years as a <strong> Missionary </strong> for the Tanzania Dar es Salaam Mission, directly managing four District Leaders and over 32 full-time team members across four towns. That experience — handling budgets, logistics, performance coaching, and cross-cultural communication — built the operational foundation I bring to every role.</p>
+      <p>Before entering the remote workspace, I spent two years as a <strong>Zone Leader</strong> for the Tanzania Dar es Salaam Mission, directly managing four District Leaders and over 32 full-time team members across four towns. That experience — handling budgets, logistics, performance coaching, and cross-cultural communication — built the operational foundation I bring to every role.</p>
       <p>I'm currently studying <strong>Software Development</strong> through BYU Pathway Worldwide, with active interests in cybersecurity, backend development, and AI. My long-term goal is a career in <strong>Customer Success Engineering</strong> — combining deep customer empathy with technical product expertise.</p>
     </div>
     <div class="reveal d3">
@@ -1433,7 +1530,7 @@ Skills: Customer Success, Account Management, CRM, Remote Work, Python, HTML, CS
       <p>I'm actively seeking remote roles in Customer Success, Technical Account Management, Customer Support Engineering, and SaaS Sales. I'm also open to internships and junior technical roles as I develop my engineering skills. If you're building a team that values discipline, ownership, and customer obsession — let's connect.</p>
 
       <div class="contact-links">
-        <a href="mailto:nyaosistaaford1@gmail.com" class="c-link" aria-label="Email Stafford">
+        <a href="mailto:nyaosistafford1@gmail.com" class="c-link" aria-label="Email Stafford">
           <div class="c-icon" aria-hidden="true">✉</div>
           <div><div class="c-info-label">Email</div><div class="c-info-value">nyaosistafford1@gmail.com</div></div>
         </a>
@@ -1487,7 +1584,7 @@ Skills: Customer Success, Account Management, CRM, Remote Work, Python, HTML, CS
 <footer>
   <p>© 2025 Stafford Nyaosi · Nairobi, Kenya</p>
   <div class="footer-right">
-    <a href="mailto:nyaosistaaford1@gmail.com" class="footer-link">nyaosistafford1@gmail.com</a>
+    <a href="mailto:nyaosistafford1@gmail.com" class="footer-link">nyaosistafford1@gmail.com</a>
     <span class="footer-mark">Remote-Ready</span>
     <a href="#home" class="footer-link" aria-label="Back to top">↑ Top</a>
   </div>
@@ -1684,9 +1781,7 @@ const log = (...a) => CONFIG.debug && console.log('[SN Portfolio]', ...a);
     btn.disabled = true;
     btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Sending…';
 
-    // Replace with Formspree / EmailJS / your endpoint:
-    // await fetch('https://formspree.io/f/YOUR_ID', {method:'POST', body: new FormData(form), headers:{Accept:'application/json'}});
-   const res = await fetch('https://formspree.io/f/mvzjybjl', {
+    const res = await fetch('https://formspree.io/f/mvzjybjl', {
       method: 'POST',
       body: new FormData(form),
       headers: { Accept: 'application/json' }
@@ -1694,6 +1789,7 @@ const log = (...a) => CONFIG.debug && console.log('[SN Portfolio]', ...a);
     if (res.ok) {
       form.style.display = 'none';
       ok.style.display = 'block';
+      log('Form submitted successfully');
     }
   });
 })();
